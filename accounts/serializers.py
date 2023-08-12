@@ -4,6 +4,6 @@ from .models import KakaoUser, Post
 class KaKaoUserSerializer(ModelSerializer):
     class Meta:
         model = KakaoUser
-        field = '__all__'
+        fields = '__all__'
     
     

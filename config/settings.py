@@ -20,12 +20,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '1'
+SECRET_KEY = 'django-insecure-jcsr(5x)@=k7p9(uq#*mn*bxuyj_k7a5j9fk^pc0aximewb%l%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', "192.168.0.4"]
 
 
 # Application definition
@@ -55,6 +55,7 @@ INSTALLED_APPS = [
 
     'rest_framework',
     'django.contrib.sites',
+    'drf_yasg',
 
     # my app
     'accounts',
@@ -76,11 +77,13 @@ SECRET_KEY = secrets['SECRET_KEY']
 SOCIAL_OUTH_CONFIG = {
     'KAKAO_REST_API_KEY': secrets['KAKAO_REST_API_KEY'],
     "KAKAO_REDIRECT_URI": secrets['KAKAO_REDIRECT_URI'],
-    "KAKAO_SECRET_KEY": secrets['KAKAO_SECRET_KEY']
+    "KAKAO_SECRET_KEY": secrets['KAKAO_SECRET_KEY'],
+    "KAKAO_ADMIN_KEY": secrets['KAKAO_ADMIN_KEY'],
+    "KAKAO_LOGOUT_REDIRECT_URI": secrets['KAKAO_LOGOUT_REDIRECT_URI'],
 }
 
 # Login - Setting
-# SITE_ID = 1
+SITE_ID = 1
 
 
 
