@@ -43,6 +43,9 @@ def kakao_get_login(request):
 @api_view(['GET'])
 @permission_classes([AllowAny, ])
 def get_user_info(request):
+
+    Juyong_Main_Page = ""
+
     CODE = request.query_params['code']
     url = "https://kauth.kakao.com/oauth/token"
     res = {
@@ -132,7 +135,7 @@ def logout_with_kakao(request):
     카카오톡과 함께 로그아웃 처리
     """
     kakao_rest_api_key = SOCIAL_OUTH_CONFIG['KAKAO_REST_API_KEY']
-    logout_redirect_uri = SOCIAL_OUTH_CONFIG['KAKAO_LOGOUT_REDIRECT_URI']
+    logout_redirect_uri = SOCIAL_OUTH_CONFIG['KAKAO_LOGOUT_REDIRECT_URI'] # 주용 메인페이지로 넘어가게 설정
     state = "none"
     kakao_service_logout_url = "https://kauth.kakao.com/oauth/logout"
 

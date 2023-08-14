@@ -59,6 +59,7 @@ INSTALLED_APPS = [
 
     # my app
     'accounts',
+    'posts',
 
     #provider
     'allauth.socialaccount.providers.kakao',
